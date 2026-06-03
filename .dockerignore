@@ -1,0 +1,7 @@
+node_modules
+.env
+screenshots
+*.log
+.git
+.gitignore
+Aptfile

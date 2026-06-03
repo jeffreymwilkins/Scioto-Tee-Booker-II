@@ -1,0 +1,22 @@
+{
+        "name": "tee-time-booker",
+        "version": "1.0.0",
+        "description": "Automated golf tee time booking for Foretees",
+        "main": "index.js",
+        "scripts": {
+                    "start": "node server.js",
+                    "postinstall": "PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium",
+                    "book": "node book-now.js",
+                    "discover": "node discover.js"
+        },
+        "engines": {
+                    "node": "18.x"
+        },
+        "dependencies": {
+                    "playwright": "^1.42.0",
+                    "node-cron": "^3.0.3",
+                    "dotenv": "^16.4.5",
+                    "express": "^4.18.2",
+                    "winston": "^3.11.0"
+        }
+}

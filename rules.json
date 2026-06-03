@@ -1,0 +1,145 @@
+{
+  "tableVersion": "2026-05-27",
+  "memberCategory": "Full",
+  "guestTypes": ["Family", "Guest", "Social Guest"],
+  "notes": [
+    "Times are minutes from midnight (540 = 9:00 AM, 1440 = end of day).",
+    "Replace this file when the club issues a new rules table.",
+    "table[i].cells stores the human-readable cell text (verbatim from the printed table).",
+    "engine.memberWindows / engine.guestWindows drive booking validation."
+  ],
+  "table": [
+    {
+      "category": "Full, Life, Non-Resident, National, Sub-Full, Golf Members",
+      "cells": {
+        "Tuesday": "May play anytime from 11:00am to end of day",
+        "Wednesday": "May play anytime",
+        "Thursday": "May play before 10:30am and from 12:00pm to end of day",
+        "Friday": "Full & Life may play anytime. Non-Resident, National & Sub-Full before 9:00am & from 12:00pm to end of day",
+        "Saturday": "May play anytime",
+        "Sunday": "May play anytime",
+        "Holidays": "May play anytime"
+      }
+    },
+    {
+      "category": "Spouse Golfers, Associate Golf Members",
+      "cells": {
+        "Tuesday": "May play anytime",
+        "Wednesday": "May play anytime",
+        "Thursday": "May play before 8:40am and from 12:00pm to end of day",
+        "Friday": "May play before 9am then only with their spouse until 12:00pm and anytime after 1:00pm",
+        "Saturday": "May play from 11:00am to end of day",
+        "Sunday": "May play from 9:00am to end of day",
+        "Holidays": "May play from 9:00am to end of day"
+      }
+    },
+    {
+      "category": "Junior Golfers",
+      "cells": {
+        "Tuesday": "May play from 11:00am to end of day",
+        "Wednesday": "May play anytime",
+        "Thursday": "May play before 8:40am and from 12:00pm to end of day",
+        "Friday": "May play before 9am then only with their Full or Life parent until 12:00pm and anytime after 1:00pm",
+        "Saturday": "May play from 11:00am to end of day",
+        "Sunday": "May play from 9:00am to end of day",
+        "Holidays": "May play from 9:00am to end of day"
+      }
+    },
+    {
+      "category": "Juvenile Sons and Daughters of Full Members",
+      "cells": {
+        "Tuesday": "May play from 11:00am to end of day",
+        "Wednesday": "May play anytime",
+        "Thursday": "May play before 8:40am and from 12:00pm to end of day",
+        "Friday": "May play before 9am then only with their Full or Life parent until 12:00pm and anytime after 1:00pm",
+        "Saturday": "May play from 11:00am to end of day",
+        "Sunday": "May play from 9:00am to end of day",
+        "Holidays": "May play from 9:00am to end of day"
+      }
+    },
+    {
+      "category": "Guests of Full, Life, National, Non-Resident & Sub-Full Golf Members",
+      "cells": {
+        "Tuesday": "May play from 12:00pm to end of day",
+        "Wednesday": "May play from 9:00am to end of day",
+        "Thursday": "May play from 12:00pm to 4:00pm",
+        "Friday": "May play from 1:00pm to 4:00pm. Only Family Guests from 9am until 12:00pm",
+        "Saturday": "May play from 12:00pm to 4:00pm",
+        "Sunday": "May play from 9:00am to 12:00pm. Only Family Guests after 12:00pm",
+        "Holidays": "May play from 9:00am to 12:00pm. Only Family Guests after 12:00pm"
+      }
+    },
+    {
+      "category": "Guests of Spouse Golfers and Associate Golf Members",
+      "cells": {
+        "Tuesday": "May play from 12:00pm to end of day",
+        "Wednesday": "May play from 9:00am to end of day",
+        "Thursday": "May play from 12:00pm to 4:00pm",
+        "Friday": "May play from 1:00pm to 4:00pm",
+        "Saturday": "May play from 12:00pm to 4:00pm",
+        "Sunday": "May play from 9:00am to 12:00pm. Only Family Guests after 12:00pm",
+        "Holidays": "May play from 9:00am to 12:00pm. Only Family Guests after 12:00pm"
+      }
+    },
+    {
+      "category": "Social Members",
+      "cells": {
+        "Tuesday": "May play anytime with a Scioto Golfer from 12:00pm to end of day",
+        "Wednesday": "May play unaccompanied before 11:00am. May play anytime after 11:00am with a Scioto Golfer",
+        "Thursday": "May play from 12:00pm with a Scioto Golfer until 4:00pm",
+        "Friday": "May play from 1:00pm with a Scioto Golfer until 4:00pm",
+        "Saturday": "May play from 12:00pm to 4:00pm with a Scioto Golfer",
+        "Sunday": "May play from 9:00am to end of day with a Scioto Golfer",
+        "Holidays": "May play from 9:00am to end of day with a Scioto Golfer"
+      }
+    }
+  ],
+  "engine": {
+    "memberWindows": {
+      "Tuesday":   [{ "start": 660, "end": 1440 }],
+      "Wednesday": [{ "start": 0,   "end": 1440 }],
+      "Thursday":  [{ "start": 0,   "end": 630  }, { "start": 720, "end": 1440 }],
+      "Friday":    [{ "start": 0,   "end": 1440 }],
+      "Saturday":  [{ "start": 0,   "end": 1440 }],
+      "Sunday":    [{ "start": 0,   "end": 1440 }],
+      "Holidays":  [{ "start": 0,   "end": 1440 }]
+    },
+    "guestWindows": {
+      "Tuesday": {
+        "Family":       [{ "start": 720, "end": 1440 }],
+        "Guest":        [{ "start": 720, "end": 1440 }],
+        "Social Guest": [{ "start": 720, "end": 1440 }]
+      },
+      "Wednesday": {
+        "Family":       [{ "start": 540, "end": 1440 }],
+        "Guest":        [{ "start": 540, "end": 1440 }],
+        "Social Guest": [{ "start": 540, "end": 1440 }]
+      },
+      "Thursday": {
+        "Family":       [{ "start": 720, "end": 960 }],
+        "Guest":        [{ "start": 720, "end": 960 }],
+        "Social Guest": [{ "start": 720, "end": 960 }]
+      },
+      "Friday": {
+        "Family":       [{ "start": 540, "end": 720 }, { "start": 780, "end": 960 }],
+        "Guest":        [{ "start": 780, "end": 960 }],
+        "Social Guest": [{ "start": 780, "end": 960 }]
+      },
+      "Saturday": {
+        "Family":       [{ "start": 720, "end": 960 }],
+        "Guest":        [{ "start": 720, "end": 960 }],
+        "Social Guest": [{ "start": 720, "end": 960 }]
+      },
+      "Sunday": {
+        "Family":       [{ "start": 540, "end": 1440 }],
+        "Guest":        [{ "start": 540, "end": 720  }],
+        "Social Guest": [{ "start": 540, "end": 720  }]
+      },
+      "Holidays": {
+        "Family":       [{ "start": 540, "end": 1440 }],
+        "Guest":        [{ "start": 540, "end": 720  }],
+        "Social Guest": [{ "start": 540, "end": 720  }]
+      }
+    }
+  }
+}
