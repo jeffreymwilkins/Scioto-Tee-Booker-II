@@ -10,6 +10,7 @@ RUN npm ci --ignore-scripts --production
 
 # Install Playwright Chromium with ALL required system dependencies
 # The --with-deps flag installs libatk, libcups, libgbm, libnss3, etc.
+ENV PLAYWRIGHT_BROWSERS_PATH=0
 RUN npx playwright install --with-deps chromium
 
 # Copy application code
