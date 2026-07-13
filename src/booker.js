@@ -111,7 +111,7 @@ class TeeTimeBooker {
         const MAX = 20000;
         const trim = (s) => s.length > MAX ? s.substring(0, MAX) + '\n<!-- truncated -->' : s;
 
-        const transports = ['C-H', 'C-A', 'C-B', 'WAL', 'FOR', 'TRL'];
+        const transports = ['C-H', 'C-A', 'C-B', 'CAR', 'WAL', 'FOR', 'TRL'];
         const transportSelect = [...document.querySelectorAll('select')].find((sel) => {
           const opts = [...sel.options].map((o) => o.value);
           return opts.some((v) => transports.includes(v));
@@ -540,7 +540,7 @@ class TeeTimeBooker {
     const transSelects = [];
     for (const sel of selects) {
       const options = await sel.$$eval('option', (opts) => opts.map((o) => o.value));
-      if (options.some((v) => ['C-H', 'C-A', 'C-B', 'WAL', 'FOR', 'TRL'].includes(v))) {
+      if (options.some((v) => ['C-H', 'C-A', 'C-B', 'CAR', 'WAL', 'FOR', 'TRL'].includes(v))) {
         transSelects.push(sel);
       }
     }
@@ -1538,7 +1538,7 @@ class TeeTimeBooker {
   // ---------------------------------------------------------------
   async readSlotNames() {
     return await this.page.evaluate(() => {
-      const transports = ['C-H', 'C-A', 'C-B', 'WAL', 'FOR', 'TRL'];
+      const transports = ['C-H', 'C-A', 'C-B', 'CAR", 'WAL', 'FOR', 'TRL'];
       const rows = [];
       const selects = [...document.querySelectorAll('select')];
       for (const sel of selects) {
@@ -1655,7 +1655,7 @@ class TeeTimeBooker {
       const updatedTransSelects = [];
       for (const sel of updatedSelects) {
         const options = await sel.$$eval('option', (opts) => opts.map((o) => o.value));
-        if (options.some((v) => ['C-H', 'C-A', 'C-B', 'WAL', 'FOR', 'TRL'].includes(v))) {
+        if (options.some((v) => ['C-H', 'C-A', 'C-B', 'CAR', 'WAL', 'FOR', 'TRL'].includes(v))) {
           updatedTransSelects.push(sel);
         }
       }
@@ -2600,7 +2600,7 @@ class TeeTimeBooker {
         try { return document.querySelectorAll(sel).length; } catch (e) { return -1; }
       };
       const transportSelects = [...document.querySelectorAll('select')].filter((s) =>
-        [...s.options].some((o) => ['C-H', 'C-A', 'C-B', 'WAL', 'FOR', 'TRL'].includes(o.value))
+        [...s.options].some((o) => ['C-H', 'C-A', 'C-B', 'CAR', 'WAL', 'FOR', 'TRL'].includes(o.value))
       ).length;
       const dialogTitles = [...document.querySelectorAll('.ui-dialog .ui-dialog-title')]
         .map((t) => (t.textContent || '').trim())
