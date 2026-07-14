@@ -891,6 +891,7 @@ function dashboardHtml() {
             <option value="C-H">Honor Caddie (C-H)</option>
             <option value="FOR">Forecaddie (FOR)</option>
             <option value="WAL">Walking (WAL)</option>
+            <option value="CAR">Cart (CAR)</option>
             <option value="TRL">Trolley (TRL)</option>
           </select>
 
@@ -950,6 +951,7 @@ function dashboardHtml() {
             <option value="C-H">Honor Caddie (C-H)</option>
             <option value="FOR">Forecaddie (FOR)</option>
             <option value="WAL">Walking (WAL)</option>
+            <option value="CAR">Cart (CAR)</option>
             <option value="TRL">Trolley (TRL)</option>
           </select>
 
@@ -1021,6 +1023,7 @@ function dashboardHtml() {
             <option value="C-H">Honor Caddie (C-H)</option>
             <option value="FOR">Forecaddie (FOR)</option>
             <option value="WAL">Walking (WAL)</option>
+            <option value="CAR">Cart (CAR)</option>
             <option value="TRL">Trolley (TRL)</option>
           </select>
 
