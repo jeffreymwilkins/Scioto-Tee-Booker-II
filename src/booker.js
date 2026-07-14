@@ -557,13 +557,24 @@ class TeeTimeBooker {
     return false;
   }
 
-  // Add a member partner (Partners tab, fall back to Members tab)
   async addPartner(partnerName, targetSlot) {
     const partnersTab = this.page.locator('a:has-text("Partners"), div:has-text("Partners")').first();
     const ptExists = await partnersTab.count();
     if (ptExists > 0) {
       await partnersTab.click({ force: true });
-      await this.humanDelay(200, 400);
+      // Poll for the partner list to actually populate (AJAX can be slow
+      // on the first booking of a session) instead of a fixed short delay.
+      const deadline = Date.now() + 3000;
+      let hasItems = false;
+      while (Date.now() < deadline) {
+        hasItems = await this.page.evaluate(() => {
+          const c = document.querySelector('.ftMs-partnerSelect .ftMs-resultList')
+                 || document.querySelector('.ftMs-partnerSelect');
+          return !!(c && c.querySelectorAll('.ftMs-listItem').length > 0);
+        });
+        if (hasItems) break;
+        await this.page.waitForTimeout(150);
+      }
     }
 
     // Partners are displayed as "Last, First (handicap)" e.g. "Hall, Dr.Jeffrey A (12.0)".
