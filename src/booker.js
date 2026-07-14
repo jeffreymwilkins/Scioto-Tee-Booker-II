@@ -1538,7 +1538,7 @@ class TeeTimeBooker {
   // ---------------------------------------------------------------
   async readSlotNames() {
     return await this.page.evaluate(() => {
-      const transports = ['C-H', 'C-A', 'C-B', 'CAR", 'WAL', 'FOR', 'TRL'];
+      const transports = ['C-H', 'C-A', 'C-B', 'CAR', 'WAL', 'FOR', 'TRL'];
       const rows = [];
       const selects = [...document.querySelectorAll('select')];
       for (const sel of selects) {
